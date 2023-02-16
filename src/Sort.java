@@ -87,7 +87,15 @@ public class Sort {
     }
 
     public static void insertionSortWordList(ArrayList<String> words) {
-        /* TO BE IMPLEMENTED IN PART B */
+        for (int j = 1; j < words.size(); j++) {
+            String temp = words.get(j);
+            int possibleIndex = j;
+            while (possibleIndex > 0 && temp.compareTo(words.get(possibleIndex - 1)) < 0) {
+                words.set(possibleIndex, words.get(possibleIndex - 1));
+                possibleIndex--;
+            }
+            words.set(possibleIndex, temp);
+        }
     }
 
 }
